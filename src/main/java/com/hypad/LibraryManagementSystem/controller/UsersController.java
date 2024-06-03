@@ -14,25 +14,48 @@ import java.util.List;
 public class UsersController {
     private final UsersService usersService;
 
+    //users.html
     @GetMapping
-    public List<User> findAllUsers(Model model){
-        return usersService.findAllUsers();
+    public String findAllUsers(Model model){
+        model.addAttribute("users", usersService.findAllUsers());
+        return "users";
     }
 
+    //todo
     @GetMapping("/user/{surname}")
     public User findUser(@PathVariable String surname){return usersService.findBySurname(surname);}
+
+    //method post action /register in register.html
     @PostMapping("/register")
     public String registerUser(@RequestBody User user){
-        usersService.addUser(user);
-        System.out.println("User: " + user + "registered successfully");
+        if(user != null){
+            usersService.addUser(user);
+            System.out.println("User: " + user + "registered successfully");
+        }
         return "register";
     }
 
     @PutMapping("/updateUserInfo")
-    public User updateUser(@RequestBody User user){return usersService.updateUser(user);}
+    public String updateUser(@RequestBody User user, Model model){
+        usersService.updateUser(user);
+        model.addAttribute("user",user);
+        return "redirect:/api/v2";
+    }
+
+    //method put action /updateUserInfo in update.html
+    @GetMapping("/updateUser")
+    public String updateUser(){
+        return "update";
+    }
 
     @DeleteMapping("/deleteUser/{surname}")
     public void deleteUser(@PathVariable String surname, String name,String patronymic){
         usersService.deleteUserByHisData(name,surname,patronymic);
+    }
+
+    //method delete action /deleteUser/{surname} in delete.html
+    @GetMapping("/deleteUser")
+    public String deleteUser(){
+        return "delete";
     }
 }

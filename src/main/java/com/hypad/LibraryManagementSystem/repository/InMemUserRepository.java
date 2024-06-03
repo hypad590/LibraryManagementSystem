@@ -42,7 +42,7 @@ public class InMemUserRepository {
         return users
                 .stream()
                 .filter(el -> el.getName().equals(surname))
-                .findAny().orElse(null);
+                .findFirst().orElse(null);
     }
     public void deleteUserByHisData(
             String name,

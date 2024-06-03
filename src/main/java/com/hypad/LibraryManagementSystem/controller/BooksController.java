@@ -14,29 +14,51 @@ import java.util.List;
 public class BooksController {
     private final BooksService booksService;
 
+    //books.html
     @GetMapping
-    public List<Book> findAllBooks(Model model){
-        return booksService.findAllBooks();
+    public String findAllBooks(Model model){
+        model.addAttribute("books",booksService.findAllBooks());
+        return "books";
     }
 
+    //todo
     @GetMapping("/book/{name}")
     public Book findBook(@PathVariable String name){
         return booksService.findByBookName(name);
     }
 
+    //method post action /addBook in addBook.html
     @PostMapping("/addBook")
     public String addBook(@RequestBody Book book){
-        booksService.addBook(book);
-        return "Book: " + book.getName() + " with id: "+ book.getId()+" added successfully";
+        if(book != null){
+            booksService.addBook(book);
+            System.out.println("Book: " + book.getName() + " with id: "+ book.getId()+" added successfully");
+        }
+        return "addBook";
     }
 
     @PutMapping("/updateBookInfo")
-    public Book updateBook(@RequestBody Book book){
-        return booksService.updateBook(book);
+    public String updateBook(@RequestBody Book book, Model model){
+        booksService.updateBook(book);
+        model.addAttribute("book",book);
+        return "redirect:/api/v1";
+    }
+
+
+    //method put action /updateBookInfo in updateBook.html
+    @GetMapping("/updateBook")
+    public String updateBook(){
+        return "updateBook";
     }
 
     @DeleteMapping("/deleteBook/{name}")
     public void deleteBook(@PathVariable String name){
         booksService.deleteBook(name);
+    }
+
+    //method delete action /deleteBook/{name} in deleteBook.html
+    @GetMapping("/deleteBook")
+    public String deleteBook(){
+        return "deleteBook";
     }
 }
