@@ -3,12 +3,13 @@ package com.hypad.LibraryManagementSystem.controller;
 import com.hypad.LibraryManagementSystem.model.Book;
 import com.hypad.LibraryManagementSystem.service.BooksService;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/api/v1")
 @AllArgsConstructor
 public class BooksController {
@@ -34,6 +35,10 @@ public class BooksController {
             booksService.addBook(book);
             System.out.println("Book: " + book.getName() + " with id: "+ book.getId()+" added successfully");
         }
+        return "addBook";
+    }
+    @GetMapping("/addBook")
+    public String addBook(){
         return "addBook";
     }
 

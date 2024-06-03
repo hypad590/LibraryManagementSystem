@@ -3,12 +3,13 @@ package com.hypad.LibraryManagementSystem.controller;
 import com.hypad.LibraryManagementSystem.model.User;
 import com.hypad.LibraryManagementSystem.service.UsersService;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/api/v2")
 @AllArgsConstructor
 public class UsersController {
@@ -32,6 +33,10 @@ public class UsersController {
             usersService.addUser(user);
             System.out.println("User: " + user + "registered successfully");
         }
+        return "register";
+    }
+    @GetMapping("/register")
+    public String registerUser(){
         return "register";
     }
 
