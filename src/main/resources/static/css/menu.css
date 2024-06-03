@@ -1,0 +1,44 @@
+.menu {
+	text-align: center;
+}
+
+.menu__bg {
+	display: flex;
+	justify-content: center;
+}
+
+.menu__left {
+	width: 50%;
+	text-align: left;
+}
+
+.menu__user {
+	margin-left: 225px;
+	border: 1px #000 solid;
+	padding: 2px 0 2px 10px;
+	margin-right: 0px;
+}
+
+.menu__user p {
+	margin-bottom: 3px;
+}
+
+.menu__right {
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+}
+
+.menu__title {
+	font-size: 33px;
+	margin: 20px 0 50px 0;
+}
+
+.menu__link {
+	text-decoration: none;
+	color: #000;
+	margin: 8px 170px 8px 170px;
+	padding: 2px 0 2px 0;
+	border: 1px #000 solid;
+}
+
