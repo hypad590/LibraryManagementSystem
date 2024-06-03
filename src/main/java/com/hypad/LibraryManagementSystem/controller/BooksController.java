@@ -3,6 +3,7 @@ package com.hypad.LibraryManagementSystem.controller;
 import com.hypad.LibraryManagementSystem.model.Book;
 import com.hypad.LibraryManagementSystem.service.BooksService;
 import lombok.AllArgsConstructor;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public class BooksController {
     private final BooksService booksService;
 
     @GetMapping
-    public List<Book> findAllBooks(){
+    public List<Book> findAllBooks(Model model){
         return booksService.findAllBooks();
     }
 

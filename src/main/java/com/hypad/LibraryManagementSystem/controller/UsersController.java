@@ -3,6 +3,7 @@ package com.hypad.LibraryManagementSystem.controller;
 import com.hypad.LibraryManagementSystem.model.User;
 import com.hypad.LibraryManagementSystem.service.UsersService;
 import lombok.AllArgsConstructor;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,20 +15,17 @@ public class UsersController {
     private final UsersService usersService;
 
     @GetMapping
-    public List<User> findAllUsers(){return usersService.findAllUsers();}
+    public List<User> findAllUsers(Model model){
+        return usersService.findAllUsers();
+    }
 
     @GetMapping("/user/{surname}")
     public User findUser(@PathVariable String surname){return usersService.findBySurname(surname);}
-
-    @GetMapping("/register")
-    public String register(){
-        return "register";
-    }
-
     @PostMapping("/register")
     public String registerUser(@RequestBody User user){
         usersService.addUser(user);
-        return "User: " + user + "registered successfully";
+        System.out.println("User: " + user + "registered successfully");
+        return "register";
     }
 
     @PutMapping("/updateUserInfo")
