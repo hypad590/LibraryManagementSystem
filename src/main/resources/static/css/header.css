@@ -1,9 +1,31 @@
 header {
 	background: #808080;
 	width: 100%;
-	
+}
+
+.header__container {
+	width: 100%;
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
 }
 
 .header__title {
+	display: inline;
+	padding: 15px 0 15px 0;
+}
 
+.header__icon {
+	display: inline;
+	width: 40px;
+}
+
+.header__user {
+	padding: 15px 0 0 0;
+}
+
+.header__link {
+	color:#000;
+	text-decoration: none;
 }
