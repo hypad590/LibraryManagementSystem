@@ -21,9 +21,10 @@ public class UsersController {
         return "users";
     }
 
-    //todo
     @GetMapping("/user/{surname}")
-    public User findUser(@PathVariable String surname){return usersService.findBySurname(surname);}
+    public @ResponseBody User findUser(@PathVariable String surname){
+        return usersService.findBySurname(surname);
+    }
 
     //method post action /register in register.html
     @PostMapping("/register")

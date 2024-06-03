@@ -21,10 +21,8 @@ public class BooksController {
         model.addAttribute("books",booksService.findAllBooks());
         return "books";
     }
-
-    //todo
     @GetMapping("/book/{name}")
-    public Book findBook(@PathVariable String name){
+    public @ResponseBody Book findBook(@PathVariable String name){
         return booksService.findByBookName(name);
     }
 
