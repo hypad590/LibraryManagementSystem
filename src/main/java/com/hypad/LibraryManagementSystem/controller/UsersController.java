@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 @Controller
 @RequestMapping("/api/v2")
 @AllArgsConstructor
@@ -25,8 +24,6 @@ public class UsersController {
     public @ResponseBody User findUser(@PathVariable String surname){
         return usersService.findBySurname(surname);
     }
-
-    //method post action /register in register.html
     @PostMapping("/register")
     public String registerUser(@RequestBody User user){
         if(user != null){
@@ -44,10 +41,9 @@ public class UsersController {
     public String updateUser(@RequestBody User user, Model model){
         usersService.updateUser(user);
         model.addAttribute("user",user);
-        return "redirect:/api/v2";
+        return "/api/v2";
     }
 
-    //method put action /updateUserInfo in update.html
     @GetMapping("/updateUser")
     public String updateUser(){
         return "update";
@@ -58,7 +54,6 @@ public class UsersController {
         usersService.deleteUserByHisData(name,surname,patronymic);
     }
 
-    //method delete action /deleteUser/{surname} in delete.html
     @GetMapping("/deleteUser")
     public String deleteUser(){
         return "delete";

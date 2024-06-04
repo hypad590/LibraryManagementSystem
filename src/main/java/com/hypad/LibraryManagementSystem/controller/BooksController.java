@@ -7,15 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @Controller
 @RequestMapping("/api/v1")
 @AllArgsConstructor
 public class BooksController {
     private final BooksService booksService;
 
-    //books.html
     @GetMapping
     public String findAllBooks(Model model){
         model.addAttribute("books",booksService.findAllBooks());
@@ -26,7 +23,6 @@ public class BooksController {
         return booksService.findByBookName(name);
     }
 
-    //method post action /addBook in addBook.html
     @PostMapping("/addBook")
     public String addBook(@RequestBody Book book){
         if(book != null){
@@ -47,8 +43,6 @@ public class BooksController {
         return "redirect:/api/v1";
     }
 
-
-    //method put action /updateBookInfo in updateBook.html
     @GetMapping("/updateBook")
     public String updateBook(){
         return "updateBook";
@@ -58,8 +52,6 @@ public class BooksController {
     public void deleteBook(@PathVariable String name){
         booksService.deleteBook(name);
     }
-
-    //method delete action /deleteBook/{name} in deleteBook.html
     @GetMapping("/deleteBook")
     public String deleteBook(){
         return "deleteBook";
