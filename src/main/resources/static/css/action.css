@@ -1,0 +1,22 @@
+.action__title {
+	text-align: center;
+	font-size: 33px;
+	margin: 20px 0 50px 0;
+}
+
+.action__bg {
+	display: flex;
+	justify-content: center;
+}
+
+.action__bor {
+	display: flex;
+	justify-content: center;
+	border: 1px #000 solid;
+	margin-top: 20xp;
+}
+
+.action__bg p {
+	font-size: 18px;
+	margin: 20px;
+}

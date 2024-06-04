@@ -32,10 +32,14 @@
 			<div class="menu__bg">
 				<div class="menu__left">
 					<div class="menu__user">
-						<p>Лиарович</p>
-						<p>Хупад</p>
-						<p>Апексович</p>
-						<p>0</p>
+						<form id="bookForm">
+							<input type="text" id="bookName" name="bookName" placeholder="Enter Book Name" required>
+							<button type="submit">Find Book</button>
+						</form>
+						<div class="menu__booklist">
+							<a href="" class="menu__booklink">Жава гайд id:0</a>
+							<a href="" class="menu__booklink">ХТМЛ гайд id:1</a>
+						</div>
 					</div>
 				</div>
 
@@ -48,5 +52,7 @@
 		</div>
 	</div>
 
+
+<script src="book-search.js"></script>
 </body>
 </html>

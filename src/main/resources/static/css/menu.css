@@ -13,7 +13,7 @@
 }
 
 .menu__user {
-	margin-left: 225px;
+	margin-left: 0;
 	border: 1px #000 solid;
 	padding: 2px 0 2px 10px;
 	margin-right: 0px;
@@ -42,3 +42,9 @@
 	border: 1px #000 solid;
 }
 
+.menu__booklink {
+	display: block;
+	margin: 3px;
+	text-decoration: none;
+	color: #000;
+}

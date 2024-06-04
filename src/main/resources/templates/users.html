@@ -32,21 +32,24 @@
 			<div class="menu__bg">
 				<div class="menu__left">
 					<div class="menu__user">
-						<p>Лиарович</p>
-						<p>Хупад</p>
-						<p>Апексович</p>
-						<p>0</p>
+						<p>Луарович Хупад Апексович id:0</p>
+						<form id="userForm">
+							<input type="text" id="surName" name="userName" placeholder="Enter Surname" required>
+							<button type="submit">Find User</button>
+						</form>
 					</div>
 				</div>
 
 				<div class="menu__right">
 					<a th:href="@{/api/v2/register}" class="menu__link">Создать пользователя</a>
-					<a th:href="@{/api/v2/update}" class="menu__link">Изменить пользователя</a>
-					<a th:href="@{/api/v2/delete}" class="menu__link">Удалить пользователя</a>
+					<a th:href="@{/api/v2/updateUser}" class="menu__link">Изменить пользователя</a>
+					<a th:href="@{/api/v2/deleteUser}" class="menu__link">Удалить пользователя</a>
 				</div>
 			</div>
 		</div>
 	</div>
 
+
+<script src="user-search.js"></script>
 </body>
 </html>
