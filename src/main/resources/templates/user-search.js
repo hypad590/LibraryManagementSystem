@@ -1,7 +1,7 @@
 const form = document.getElementById('userForm');
 const surNameInp = document.getElementById('surName');
 
-form.addEventListener('submit',, async (event) )=>{
+form.addEventListener('submit', async (event) )=>{
     event.preventDefault();
 
     const surName = surNameInp.value;
