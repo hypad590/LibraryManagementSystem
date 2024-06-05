@@ -25,9 +25,10 @@ public class UsersController {
         return usersService.findBySurname(surname);
     }
     @PostMapping("/register")
-    public String registerUser(@RequestBody User user){
+    public String registerUser(@RequestBody User user, Model model){
         if(user != null){
             usersService.addUser(user);
+            model.addAttribute("user",user);
             System.out.println("User: " + user + "registered successfully");
         }
         return "register";
@@ -37,7 +38,7 @@ public class UsersController {
         return "register";
     }
 
-    @PutMapping("/updateUserInfo")
+    @PutMapping("/updateUser")
     public String updateUser(@RequestBody User user, Model model){
         usersService.updateUser(user);
         model.addAttribute("user",user);
@@ -49,6 +50,7 @@ public class UsersController {
         return "update";
     }
 
+    //on btn method 🔽 todo
     @DeleteMapping("/deleteUser/{surname}")
     public void deleteUser(@PathVariable String surname, String name,String patronymic){
         usersService.deleteUserByHisData(name,surname,patronymic);

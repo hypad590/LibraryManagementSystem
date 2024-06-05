@@ -48,6 +48,7 @@ public class BooksController {
         return "updateBook";
     }
 
+    //on btn method 🔽 todo
     @DeleteMapping("/deleteBook/{name}")
     public void deleteBook(@PathVariable String name){
         booksService.deleteBook(name);
