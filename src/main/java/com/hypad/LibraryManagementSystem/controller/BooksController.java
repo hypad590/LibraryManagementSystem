@@ -3,6 +3,7 @@ package com.hypad.LibraryManagementSystem.controller;
 import com.hypad.LibraryManagementSystem.model.Book;
 import com.hypad.LibraryManagementSystem.service.BooksService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -48,10 +49,13 @@ public class BooksController {
         return "updateBook";
     }
 
-    //on btn method 🔽 todo
     @DeleteMapping("/deleteBook/{name}")
-    public void deleteBook(@PathVariable String name){
-        booksService.deleteBook(name);
+    public ResponseEntity<?> deleteBook(@PathVariable String name){
+        try{booksService.deleteBook(name);
+            return ResponseEntity.ok().build();
+        }catch (Exception e){
+            return ResponseEntity.status(500).body("Error deleting book: " + e.getMessage());
+        }
     }
     @GetMapping("/deleteBook")
     public String deleteBook(){

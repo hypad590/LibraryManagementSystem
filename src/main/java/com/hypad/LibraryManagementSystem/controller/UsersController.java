@@ -3,6 +3,7 @@ package com.hypad.LibraryManagementSystem.controller;
 import com.hypad.LibraryManagementSystem.model.User;
 import com.hypad.LibraryManagementSystem.service.UsersService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -50,10 +51,17 @@ public class UsersController {
         return "update";
     }
 
-    //on btn method 🔽 todo
     @DeleteMapping("/deleteUser/{surname}")
-    public void deleteUser(@PathVariable String surname, String name,String patronymic){
-        usersService.deleteUserByHisData(name,surname,patronymic);
+    public ResponseEntity<?>  deleteUser(@PathVariable String surname,
+                                         String name,
+                                         String patronymic){
+        try{
+            usersService.deleteUserByHisData(name,surname,patronymic);
+            return ResponseEntity.ok().build();
+        }catch (Exception e){
+            return ResponseEntity.status(500).body("Error deleting user: " + e.getMessage());
+        }
+
     }
 
     @GetMapping("/deleteUser")
