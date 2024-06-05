@@ -5,10 +5,12 @@ const bookNameInp = document.getElementById('name');
 form.addEventListener('submit', async (event) =>{
     event.preventDefault();
 
-    const surName = surNameInp.value;
-
-    const bookName = bookNameInp.value;
-
+    if(surNameInp.value == null){
+        const bookName = bookNameInp.value;
+    }
+    else{
+        const surName = surNameInp.value;
+    }
     try{
         const [response, response0] = await Promise.all([
             fetch(`/api/v2/deleteUser/${surName}`, {

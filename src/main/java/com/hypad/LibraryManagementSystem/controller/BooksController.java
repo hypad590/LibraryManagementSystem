@@ -36,11 +36,11 @@ public class BooksController {
         return "addBook";
     }
 
-    @PutMapping("/updateBookInfo")
+    @PutMapping("/updateBook")
     public String updateBook(@RequestBody Book book, Model model){
         booksService.updateBook(book);
         model.addAttribute("book",book);
-        return "redirect:/api/v1";
+        return "updateBook";
     }
 
     @GetMapping("/updateBook")
