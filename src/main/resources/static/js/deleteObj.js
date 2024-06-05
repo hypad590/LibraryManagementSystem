@@ -50,7 +50,7 @@ form.addEventListener('submit', async (event) => {
             }
             console.log('Response data:', await response.json());
         });
-
+    window.location.href = `/api/v2`;    
     } catch (error) {
         console.error('Error fetching name', error);
     }

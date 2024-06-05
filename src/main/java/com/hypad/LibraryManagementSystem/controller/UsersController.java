@@ -1,12 +1,21 @@
 package com.hypad.LibraryManagementSystem.controller;
 
-import com.hypad.LibraryManagementSystem.model.User;
-import com.hypad.LibraryManagementSystem.service.UsersService;
-import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.hypad.LibraryManagementSystem.model.User;
+import com.hypad.LibraryManagementSystem.service.UsersService;
+
+import lombok.AllArgsConstructor;
 
 @Controller
 @RequestMapping("/api/v2")
@@ -26,13 +35,15 @@ public class UsersController {
         return usersService.findBySurname(surname);
     }
     @PostMapping("/register")
-    public String registerUser(@RequestBody User user, Model model){
+    public ResponseEntity<String> registerUser(@RequestBody User user, Model model){
         if(user != null){
             usersService.addUser(user);
             model.addAttribute("user",user);
             System.out.println("User: " + user + "registered successfully");
+            return ResponseEntity.ok("User registered successfully");
+        }else{
+            return ResponseEntity.badRequest().body("Invalid user data");
         }
-        return "register";
     }
     @GetMapping("/register")
     public String registerUser(){
