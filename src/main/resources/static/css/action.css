@@ -16,7 +16,11 @@
 	margin-top: 20xp;
 }
 
-.action__bg p {
-	font-size: 18px;
-	margin: 20px;
+
+.action__input {
+	margin: 20px 20px 20px 3px;
+}
+
+.action__button {
+	padding: 0 5px 5px 3px;
 }

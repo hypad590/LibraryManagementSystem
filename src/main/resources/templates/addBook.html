@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Регистрация</title>
+	<title>Добавить книгу</title>
 	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 	<link rel="stylesheet" type="text/css" th:href="@{/css/container.css}">
 	<link rel="stylesheet" type="text/css" th:href="@{/css/header.css}">
@@ -28,7 +28,17 @@
 		<p class="action__title">Добавить книгу</p>
 		<div class="action__bg">
 			<div class="action__bor">
-				<p>форма</p>
+				<form id="addBook">
+					<div class="action__input">
+						<input type="text" id="addName" name="addName" placeholder="Enter Book Name" required>
+					</div>
+					<div class="action__input">
+						<input type="text" id="addInfo" name="addInfo" placeholder="Enter Book Info" required>
+					</div>
+					<div class="action__button">
+						<button type="submit">Add Book</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

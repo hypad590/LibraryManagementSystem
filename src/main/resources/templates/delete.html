@@ -28,10 +28,21 @@
 		<p class="action__title">Удалить пользователя</p>
 		<div class="action__bg">
 			<div class="action__bor">
-				<p>форма </p>
+				<form id="deleteId">
+					<div class="action__input">
+						<input type="text" id="surName" name="surName" placeholder="Enter Surname" required>
+					</div>
+					<div class="action__input">
+						<input type="text" id="name" name="name" placeholder="Enter Name" required>
+					</div>
+					<div class="action__button">
+						<button type="submit">Delete User</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
 
+<script src="/js/deleteObj.js"></script>
 </body>
 </html>
