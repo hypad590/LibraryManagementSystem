@@ -28,10 +28,27 @@
 		<p class="action__title">Изменить пользователя</p>
 		<div class="action__bg">
 			<div class="action__bor">
-				<p>форма</p>
+				<form id="updateForm">
+					<div class="action__input">
+						<input type="text" id="id" name="id" placeholder="Enter ID" required>
+					</div>
+					<div class="action__input">
+						<input type="text" id="surName" name="surName" placeholder="Enter New Surname" required>
+					</div>
+					<div class="action__input">
+						<input type="text" id="lastName" name="lastName" placeholder="Enter New Name" required>
+					</div>
+					<div class="action__input">
+						<input type="text" id="patronymic" name="patronymic" placeholder="Enter New Patronymic" required>
+					</div>
+					<div class="action__button">
+						<button type="submit">Update User</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
 
+<script src="/js/update.js"></script>
 </body>
 </html>

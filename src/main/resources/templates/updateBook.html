@@ -28,10 +28,24 @@
 		<p class="action__title">Изменить книгу</p>
 		<div class="action__bg">
 			<div class="action__bor">
-				<p>форма</p>
+				<form id="updateBookForm">
+					<div class="action__input">
+						<input type="text" id="id" name="id" placeholder="Enter ID" required>
+					</div>
+					<div class="action__input">
+						<input type="text" id="bookName" name="bookName" placeholder="Enter New Book Name" required>
+					</div>
+					<div class="action__input">
+						<input type="text" id="bookInfo" name="bookInfo" placeholder="Enter New Book Info" required>
+					</div>
+					<div class="action__button">
+						<button type="submit">Update Book</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
 
+<script src="/js/updateBook.js"></script>
 </body>
 </html>
