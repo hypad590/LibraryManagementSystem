@@ -1,5 +1,5 @@
 header {
-	background: #808080;
+	background: #04202C;
 	width: 100%;
 }
 
@@ -26,6 +26,6 @@ header {
 }
 
 .header__link {
-	color:#000;
+	color: #ffffff;
 	text-decoration: none;
 }
