@@ -24,23 +24,25 @@
 		</div>
 	</header>
 
+	<img th:src="@{/img/user.png}" class="header__img">
+
 	<div class="container">
 		<div class="menu">
-			<div class="menu__center">
-				<p class="menu__title">Пользователь</p>
-			</div>
 			<div class="menu__bg">
 				<div class="menu__left">
+					<div class="menu__center">
+						<p class="menu__title">Пользователь</p>
+					</div>
 					<div class="menu__user">
 						<p>Луарович Хупад Апексович id:0</p>
-						<form id="userForm">
-							<input type="text" id="surName" name="userName" placeholder="Enter Surname" required>
-							<button type="submit">Find User</button>
-						</form>
 					</div>
 				</div>
 
 				<div class="menu__right">
+					<form id="userForm" class="menu__form">
+						<input type="text" id="surName" name="userName" placeholder="Введите фамилию" required>
+						<button type="submit">Найти</button>
+					</form>
 					<a th:href="@{/api/v2/register}" class="menu__link">Создать пользователя</a>
 					<a th:href="@{/api/v2/updateUser}" class="menu__link">Изменить пользователя</a>
 					<a th:href="@{/api/v2/deleteUser}" class="menu__link">Удалить пользователя</a>

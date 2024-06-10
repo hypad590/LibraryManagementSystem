@@ -28,24 +28,24 @@
 
 	<div class="container">
 		<div class="menu">
-			<div class="menu__center">
-				<p class="menu__title">Книги</p>
-			</div>
 			<div class="menu__bg">
 				<div class="menu__left">
+					<div class="menu__center">
+						<p class="menu__title">Список книг</p>
+					</div>
 					<div class="menu__user">
-						<form id="bookForm">
-							<input type="text" id="bookName" name="bookName" placeholder="Enter Book Name" required>
-							<button type="submit">Find Book</button>
-						</form>
 						<div class="menu__booklist">
-							<a href="" class="menu__booklink">Жава гайд id:0</a>
-							<a href="" class="menu__booklink">ХТМЛ гайд id:1</a>
+							<div class="menu__bookbr"><a href="" class="menu__booklink">Жава гайд id:0</a></div>
+							<div class="menu__bookbr"><a href="" class="menu__booklink">ХТМЛ гайд id:1</a></div>
 						</div>
 					</div>
 				</div>
 
 				<div class="menu__right">
+					<form id="bookForm" class="menu__form">
+						<input type="text" id="bookName" name="bookName" placeholder="Введите название книги" required>
+						<button type="submit">Найти</button>
+					</form>
 					<a th:href="@{/api/v1/addBook}" class="menu__link">Добавить книгу</a>
 					<a th:href="@{/api/v1/updateBook}" class="menu__link">Изменить книгу</a>
 					<a th:href="@{/api/v1/deleteBook}" class="menu__link">Удалить книгу</a>
