@@ -29,3 +29,7 @@ header {
 	color: #ffffff;
 	text-decoration: none;
 }
+
+.header__img {
+	max-width: 100%;
+}

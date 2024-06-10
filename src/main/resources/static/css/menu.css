@@ -14,9 +14,10 @@
 
 .menu__user {
 	margin-left: 0;
-	border: 1px #000 solid;
+	border: 2px #000 solid;
 	padding: 2px 0 2px 10px;
 	margin-right: 0px;
+	border-radius: 5px;
 }
 
 .menu__user p {
@@ -40,6 +41,8 @@
 	margin: 8px 170px 8px 170px;
 	padding: 2px 0 2px 0;
 	border: 1px #000 solid;
+	border-radius: 3px;
+	background-color: #d3d3d3;
 }
 
 .menu__booklink {
